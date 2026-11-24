@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Официальный информационный портал города Ростова-на-Дону</title>
+    
+    <meta name="description" content="Официальный информационно-строительный портал Ростова-на-Дону. Проверенные строительные компании, услуги, контакты, жалобы на недобросовестных исполнителей.">
+    <meta name="keywords" content="строительство Ростов-на-Дону, кровля, фасады, строительные компании, проверенные исполнители, жалобы строительство, портал Ростов">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "Информационно-строительный портал г. Ростова-на-Дону",
+      "description": "Официальный информационно-строительный портал города Ростова-на-Дону. Проверенные строительные компании и подрядчики.",
+      "url": "https://ваш-сайт.рф",
+      "telephone": "+7 (800) 555-01-01",
+      "email": "stroy-portal@rostov.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ростов-на-Дону",
+        "addressRegion": "Ростовская область",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "47.2357",
+        "longitude": "39.7015"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Ростов-на-Дону"},
+        {"@type": "City", "name": "Батайск"},
+        {"@type": "City", "name": "Аксай"},
+        {"@type": "City", "name": "Таганрог"},
+        {"@type": "City", "name": "Шахты"},
+        {"@type": "City", "name": "Новочеркасск"},
+        {"@type": "City", "name": "Волгодонск"},
+        {"@type": "City", "name": "Каменск-Шахтинский"},
+        {"@type": "City", "name": "Новошахтинск"},
+        {"@type": "City", "name": "Гуково"},
+        {"@type": "City", "name": "Зверево"}
+      ]
+    }
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f6f9;
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .gov-panel {
+            background-color: #0d2c54;
+            color: #fff;
+            padding: 8px 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ae9461;
+        }
+
+        .main-header {
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-placeholder {
+            width: 60px;
+            height: 70px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 10px;
+            border: 1px dashed #333;
+            flex-shrink: 0;
+        }
+        .status-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* ЯРКАЯ МИГАЮЩАЯ КНОПКА */
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e6b84c; /* Яркий золотисто-желтый */
+            color: #0d2c54 !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid #b88a2e;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            margin-left: 15px;
+            white-space: nowrap;
+            animation: pulse-btn 2s infinite;
+        }
+        
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(230, 184, 76, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(230, 184, 76, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 184, 76, 0); }
+        }
+
+        .nav-btn:hover {
+            background: #f0c75e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            animation: none;
+        }
+
+        .nav-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .slider-container {
+            position: relative;
+            height: 450px; 
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000;
+            opacity: 0;
+            animation: slideAnimation 12s infinite;
+        }
+
+        .slide:nth-child(1) { background-image: url('rostov1.png'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('rostov2.png'); animation-delay: 4s; }
+        .slide:nth-child(3) { background-image: url('rostov3.png'); animation-delay: 8s; }
+
+        @keyframes slideAnimation {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            33% { opacity: 1; }
+            38% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+            padding: 15px;
+            max-width: 800px;
+        }
+        .hero-content h1 {
+            font-size: 38px;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,1);
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,1);
+            line-height: 1.4;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .section-title {
+            text-align: center;
+            border-bottom: 2px solid #0d2c54;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .brand-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .brand-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            background: #fafafa;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        .brand-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0d2c54;
+            line-height: 1.3;
+        }
+
+        .brand-name .accent {
+            font-weight: 700;
+        }
+
+        .brand-card.featured {
+            border: 1px solid rgba(174, 148, 97, 0.4);
+            background: linear-gradient(135deg, #ffffff 0%, #fdfaf3 100%);
+            box-shadow: 0 2px 10px rgba(174, 148, 97, 0.08);
+        }
+
+        .brand-card.featured::before {
+            content: '⭐';
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            font-size: 16px;
+            opacity: 0.6;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.1); }
+        }
+
+        .brand-card.featured:hover {
+            border-color: #ae9461;
+            box-shadow: 0 8px 25px rgba(174, 148, 97, 0.2);
+        }
+
+        .brand-card.super-featured {
+            border: 2px solid #ae9461;
+            background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+            box-shadow: 0 4px 15px rgba(174, 148, 97, 0.15);
+        }
+
+        .brand-card.super-featured::before {
+            content: '🛡️ ОСОБО ДОВЕРЕННАЯ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ae9461;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 3px 0;
+            text-align: center;
+            letter-spacing: 0.5px;
+            z-index: 10;
+        }
+
+        .brand-card.super-featured:hover {
+            border-color: #0d2c54;
+            box-shadow: 0 8px 25px rgba(13, 44, 84, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .checkmark-badge {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        footer {
+            background-color: #111;
+            color: #bbb;
+            padding: 25px 15px;
+            margin-top: 40px;
+            font-size: 14px;
+            border-top: 3px solid #ae9461;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gov-panel {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+                padding: 6px 10px;
+            }
+            .main-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px;
+            }
+            .header-left {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-btn {
+                margin-left: 0;
+                margin-top: 10px;
+                display: block;
+                text-align: center;
+                animation: none;
+            }
+            .slider-container {
+                height: 300px;
+            }
+            .hero-content h1 {
+                font-size: 24px;
+            }
+            .hero-content p {
+                font-size: 14px;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .brand-logo {
+                height: 60px;
+            }
+            .brand-name {
+                font-size: 14px;
+            }
+            .brand-card {
+                padding: 15px 10px;
+            }
+            .brand-card.featured::before {
+                font-size: 14px;
+                top: 4px;
+                right: 8px;
+            }
+            .brand-card.super-featured::before {
+                font-size: 9px;
+                padding: 2px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .brand-logo {
+                height: 50px;
+            }
+            .brand-name {
+                font-size: 12px;
+            }
+            .brand-card {
+                padding: 12px 8px;
+                border-radius: 6px;
+            }
+            .brand-card.featured::before {
+                font-size: 12px;
+                top: 3px;
+                right: 6px;
+            }
+            .brand-card.super-featured::before {
+                font-size: 8px;
+            }
+            .checkmark-badge {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gov-panel">
+        <div>Государственный информационный ресурс • Официальный сайт</div>
+        <div>Версия для слабовидящих (ГОСТ Р 52872-2012)</div>
+    </div>
+
+    <header class="main-header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); flex-wrap: wrap;">
+        <div class="header-left" style="display: flex; align-items: center; gap: 20px;">
+            <div class="logo-placeholder" style="display: flex; align-items: center; justify-content: center;">
+                <img src="img/gerb.png" alt="Герб Ростова" style="height: 55px; width: auto; display: block; object-fit: contain;">
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <div style="font-size: 22px; font-weight: bold; color: #0d2c54; line-height: 1.2; letter-spacing: 0.5px;">
+                    Информационно-строительный портал
+                </div>
+                <div style="font-size: 13px; color: #666; line-height: 1.3; margin-top: 4px;">
+                    г. Ростов-на-Дону | Официальный ресурс
+                </div>
+            </div>
+            <div class="status-badge" style="margin: 0;">✓ ПРОВЕРЕНО ИСПОЛНИТЕЛЯМИ</div>
+        </div>
+        <div>
+            <a href="stati-i-konsultacii.html" class="nav-btn">📰 Перейти к статьям и отзывам</a>
+        </div>
+    </header>
+
+    <section class="slider-container">
+        <div class="slider">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Ростов-на-Дону — Южная столица России</h1>
+            <p>Официальная справочная система, проверенные исполнители и городские веб-ресурсы</p>
+        </div>
+    </section>
+
+    <main class="content-container">
+        <h2 class="section-title">Проверенные строительные компании Ростова-на-Дону</h2>
+        
+        <div class="brands-grid">
+            <div class="brand-card">
+                <a href="https://www.grandline.ru/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/grandline.png" alt="Grand Line - стройматериалы Ростов-на-Дону"></div>
+                    <div class="brand-name">Grand Line</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card featured">
+                <a href="https://montazh-krysha.ru/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/krovlyalegenda.png" alt="Кровля-Легенда - монтаж кровли в Ростове"></div>
+                    <div class="brand-name">Кровля-<span class="accent">Легенда</span></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card featured">
+                <a href="https://tandem161.ru" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/tandempro.png" alt="ТандемПро - строительные услуги Ростов"></div>
+                    <div class="brand-name">ТандемПро</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card">
+                <a href="https://www.tn.ru/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/technonicol.png" alt="Технониколь - кровельные материалы"></div>
+                    <div class="brand-name">Технониколь</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card featured">
+                <a href="https://xn----8sbej1ahqdeo2o.xn--p1ai/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/krovlyadona.png" alt="кровля-дона.рф - кровельные работы в Ростове"></div>
+                    <div class="brand-name">кровля-дона.рф</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card">
+                <a href="https://alter-krovlya.ru/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/alter.png" alt="Альтер - кровельные системы"></div>
+                    <div class="brand-name">Альтер</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card featured">
+                <a href="https://sk-tandem.clients.site/" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/tandem.png" alt="СК Тандем - строительные работы"></div>
+                    <div class="brand-name">CK Тандем</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card">
+                <a href="https://clck.ru/3VErQz" class="brand-link" target="_blank">
+                    <div class="brand-logo"><img src="img/krovlyuvsem.png" alt="кровельно-фасадные исполнители"></div>
+                    <div class="brand-name">кровельно-фасадные исполнители</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="https://zabor-vorota161.ru" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/zabory.png" alt="Заборы и ограждения в Ростове-на-Дону и Юге России" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Заборы и ограждения<br><small style="font-size:11px; color:#666; font-weight:normal;">Ростов-на-Дону и Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="https://rosmetallprom.ru" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/ventfasad.png" alt="Коммерческие вентфасады в Ростове-на-Дону" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Коммерческие вентфасады<br><small style="font-size:11px; color:#666; font-weight:normal;">Ростов-на-Дону и Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="https://stalfasadprom.ru" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/stalfasad.png" alt="СтальФасад - фасадные системы в Ростове" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>СтальФасад<br><small style="font-size:11px; color:#666; font-weight:normal;">Фасадные системы / Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="твой сайт" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/dizayn.png" alt="Дизайн и отделка помещений в Ростове-на-Дону" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Дизайн и отделка<br><small style="font-size:11px; color:#666; font-weight:normal;">Ростов-на-Дону и Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="https://первый-металл.рф" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/pervyy-metall.png" alt="Первый-Металл - вентфасады и металлоконструкции" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Первый-Металл<br><small style="font-size:11px; color:#666; font-weight:normal;">Вентфасад / Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="твой сайт" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/dpk-haus.png" alt="ДПК Хаус - фасады и заборы из ДПК" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>ДПК Хаус<br><small style="font-size:11px; color:#666; font-weight:normal;">Фасады и заборы / Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="https://lex39039.github.io/katalog-mramor22222/" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/termopaneli.png" alt="Термопанели для утепления фасадов в Ростове" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Термопанели<br><small style="font-size:11px; color:#666; font-weight:normal;">Утепление фасадов / Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+
+            <div class="brand-card super-featured">
+                <a href="твой сайт" class="brand-link" target="_blank" itemprop="url">
+                    <div class="brand-logo" style="margin-top: 15px;"><img src="img/krovelnye-raboty.png" alt="Кровельные работы в Ростове-на-Дону" itemprop="image"></div>
+                    <div class="brand-name"><span class="checkmark-badge">✔</span>Кровельные работы<br><small style="font-size:11px; color:#666; font-weight:normal;">Ростов-на-Дону и Юг России</small></div>
+                    <div style="margin-top: 8px; font-size: 13px; color: #ae9461; font-weight: 500; letter-spacing: 0.3px;">Перейти на сайт →</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p style="margin: 0 0 8px 0; font-weight: bold; color: #ae9461; font-size: 15px;">О проекте</p>
+                <p style="margin: 0 0 5px 0; font-size: 13px; color: #aaa; line-height: 1.5;">Официальный информационно-строительный портал<br>г. Ростова-на-Дону. Сведения актуальны на 2026 год.</p>
+                <p style="margin: 0; font-size: 12px; color: #666;">Все права защищены. Копирование материалов<br>разрешено только с указанием источника.</p>
+            </div>
+            <div>
+                <p style="margin: 0 0 8px 0; font-weight: bold; color: #ae9461; font-size: 15px;">Прием обращений</p>
+                <p style="margin: 0 0 5px 0; font-size: 13px; color: #aaa; line-height: 1.5;">По вопросам жалоб на недобросовестных<br>исполнителей и строительные компании:</p>
+                <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 8px;">
+                    <a href="#" style="display: inline-block; background: #4CAF50; color: #fff; padding: 6px 16px; border-radius: 5px; text-decoration: none; font-size: 13px; font-weight: bold; transition: background 0.3s; text-align: center;" onmouseover="this.style.background='#388E3C'" onmouseout="this.style.background='#4CAF50'">📲 Написать в MAX</a>
+                    <span style="font-size: 11px; color: #666;">(российский национальный мессенджер)</span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px;">
+                        <span style="font-size: 11px; color: #888; background: #222; padding: 3px 10px; border-radius: 4px;">📞 8 (800) 555-01-01</span>
+                        <span style="font-size: 11px; color: #888; background: #222; padding: 3px 10px; border-radius: 4px;">✉️ stroy-portal@rostov.ru</span>
+                    </div>
+                    <span style="font-size: 11px; color: #666; margin-top: 3px;">🕐 Круглосуточно • Ответ: 24 часа</span>
+                </div>
+            </div>
+            <div>
+                <p style="margin: 0 0 8px 0; font-weight: bold; color: #ae9461; font-size: 15px;">Юридическая информация</p>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #aaa; line-height: 1.8;">
+                    <li><a href="#" style="color: #ae9461; text-decoration: underline;" onmouseover="this.style.color='#c4a86a'" onmouseout="this.style.color='#ae9461'">Политика конфиденциальности</a></li>
+                    <li><a href="#" style="color: #ae9461; text-decoration: underline;" onmouseover="this.style.color='#c4a86a'" onmouseout="this.style.color='#ae9461'">Согласие на обработку ПД</a></li>
+                    <li><a href="#" style="color: #ae9461; text-decoration: underline;" onmouseover="this.style.color='#c4a86a'" onmouseout="this.style.color='#ae9461'">Версия для слабовидящих</a></li>
+                    <li style="font-size: 12px; color: #666; margin-top: 5px;">⚖️ Сайт соответствует требованиям 152-ФЗ</li>
+                </ul>
+            </div>
+        </div>
+        <div style="max-width: 1200px; margin: 20px auto 0; padding-top: 15px; border-top: 1px solid #333; text-align: center;">
+            <p style="margin: 0 0 5px 0; font-size: 12px; color: #666; line-height: 1.6;">Направляя обращение через любые каналы связи, указанные на сайте, <br>вы даете <a href="#" style="color: #ae9461; text-decoration: underline;">согласие на обработку персональных данных</a> в соответствии с Федеральным законом № 152-ФЗ.</p>
+            <p style="margin: 0; font-size: 11px; color: #555;">Персональные данные используются исключительно для ответа на обращение и не передаются третьим лицам.<br>Хранение данных осуществляется на серверах, расположенных на территории РФ.</p>
+            <p style="margin: 10px 0 0 0; font-size: 11px; color: #444;">© 2026 Информационно-строительный портал г. Ростова-на-Дону</p>
+        </div>
+    </footer>
+
+</body>
+</html>
